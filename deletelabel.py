@@ -1,3 +1,7 @@
+#use for deleteing all the nodes in neo4j database
+
+
+
 from py2neo import Graph,authenticate,Node,Relationship
 import MySQLdb
 import threading
