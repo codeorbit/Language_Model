@@ -27,17 +27,12 @@ def probability_first_word(word,probable_words,top_n=10):
 		return (sorted(FINAL_WORDS.items(),key=operator.itemgetter(1),reverse=True)[:top_n])		
 		
 	except Exception as e:
-		# print e
 		pass
 
 	
 
 def probability_second_word(first_word,second_word,pw,fwcount,top_n=10):
-	
-	# print pw
-	# print fwcount	
-
-	
+		
  	global FINAL_WORDS 
  	FINAL_WORDS = {}
 
@@ -51,11 +46,7 @@ def probability_second_word(first_word,second_word,pw,fwcount,top_n=10):
 
 
 def probability_third_word(fc,sc,rft,rst,pw,top_n=5):
-	# print fc
-	# print sc
-	# print rft
-	# print rst
-	# print pw
+
 	global FINAL_WORDS 
 	FINAL_WORDS = {}
 	total=0
@@ -83,9 +74,7 @@ def probability_third_word(fc,sc,rft,rst,pw,top_n=5):
 			# print score_rst
 			score = score+score_rst
 		FINAL_WORDS.update({p_word:(score)})
-		#print "******************************"
-	# print "------------------"
-	# print Counter(FINAL_WORDS).most_common(top_n)
+		
 	'''
 	boundry condition when nothing is found
 	'''
@@ -103,20 +92,16 @@ def probability_third_word(fc,sc,rft,rst,pw,top_n=5):
 		
 		
 		FINAL_WORDS_order_dic.update(Counter(FINAL_WORDS).most_common(top_n))
-		
-		#print FINAL_WORDS_order_dic
+
 	if len(FINAL_WORDS_order_dic)<6:
-		# print "inside"
-		# FINAL_WORDS={}
+		
 		for p_word ,count_li in rft.items():
 			if p_word not in FINAL_WORDS_order_dic.keys():
 
 				score = count_li[0]+count_li[1]/(total_rft)
 				FINAL_WORDS.update({p_word:(score)})
 		FINAL_WORDS_order_dic.update(Counter(FINAL_WORDS).most_common(top_n))
-		#print FINAL_WORDS_order_dic
-	
-	# print Counter(FINAL_WORDS).most_common(top_n)
+		
 	return Counter(FINAL_WORDS).most_common(top_n)
 
 
