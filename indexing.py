@@ -2,8 +2,9 @@ from multiprocessing import Pool
 import threading
 import word_classify as wc
 import urllib2 
+import db_config 
 from py2neo import Graph,authenticate,Node,Relationship
-authenticate("localhost:7474","neo4j","8760neo4j")
+authenticate("localhost:7474",db_config.username,db_config.password)
 
 # graph = Graph("http://localhost:7474/db/data")
 graph = Graph()

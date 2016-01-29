@@ -5,7 +5,7 @@
 from py2neo import Graph,authenticate,Node,Relationship
 import MySQLdb
 import threading
-authenticate("localhost:7474","neo4j","8760neo4j")
+authenticate("localhost:7474",db_config.username,db_config.password)
 graph = Graph()
 
 
