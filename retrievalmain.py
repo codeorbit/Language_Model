@@ -1,4 +1,5 @@
 from py2neo import Graph,authenticate,Node,Relationship
+import db_config
 authenticate("localhost:7474",db_config.username,db_config.password)
 import word_classify as wc
 graph = Graph()
