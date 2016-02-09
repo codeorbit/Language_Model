@@ -1,6 +1,9 @@
 from bottle import route,run,response
 from middleware import autoMain
+from load_data import NWORDS
+from spellcheck import correct
 import tags
+
 @route('/')
 def hello():
 	return "Welcome to the language model"
@@ -8,6 +11,15 @@ def hello():
 @route('/language_model/')
 def default_list():
     return "Welcome to the language model"
+
+@route('/language_model/start')
+def load_data():
+    return NWORDS()
+
+
+@route('/language_model/spellcheck/<name>',method = 'GET')
+def spellcheck(name = " " ):
+    return {"candidates":correct(name)}
 
 @route('/get_tags/<name>/<top_n>',method = 'GET')
 def get_tags(name = " ",top_n = " "):
