@@ -1,4 +1,4 @@
-import db_config
+from config import db_config
 from py2neo import Graph,authenticate,Node,Relationship
 authenticate("localhost:7474",db_config.username,db_config.password)
 
