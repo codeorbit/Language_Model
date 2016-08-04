@@ -8,7 +8,7 @@ A simple Language model having features such as **Autocomplete, Spell Check, Wor
 - [Installation](#installation)
     - [Clone it](#clone-it)
     - [Run it](#run-it)
-- [How To Use ??](#how-to-use-??)
+- [How To Use ??](#how-to-use??)
 - [Issues](#issues)
 
 ## Features
